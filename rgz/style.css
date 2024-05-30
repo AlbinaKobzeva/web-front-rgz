@@ -1,0 +1,171 @@
+body { 
+    font-family: Arial, sans-serif; 
+    margin: 0; 
+    padding: 0; 
+    color: #333;
+	display: flex; /* Определяет, что элементы будут располагаться как flex-контейнеры */
+	min-height: 100vh; /* Устанавливает минимальную высоту контейнера равной высоте видимой области браузера (видимой высоте экрана) */
+    justify-content: flex-start; 
+    flex-direction: column;
+}
+header { /* меню */
+    background-color: #00b5c2; 
+    color: white;
+    width: 200px;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    overflow: auto;
+    box-shadow: 5px 4px 4px rgba(57, 53, 53, 0.1); 
+    z-index: 999;
+    border: 1px solid black;
+    border-radius: 1px;
+}
+
+footer {
+    /*background-color: #86e7ee;*/
+    color: rgb(13, 12, 12);
+    text-align:right;
+    padding: 5px 0;
+    position: relative;
+    width: 100%;
+}
+
+header nav ul { /* Тоже самое меню, но работа со списком */
+    list-style-type: none; /* Убираем стандартные маркеры списка */
+    padding: 0; 
+	position: fixed; /* Фиксируем позицию списка, чтобы он не прокручивался вверх при листании страниц сайта */
+}
+
+header nav ul li { /* Элементы списка меню */
+	padding-left: 10px; 
+    display: flex; 
+}
+
+header nav ul li a { /* Ссылки в элементе меню */
+	padding: 10px 0; 
+	color: #000000; 
+    text-decoration: none; 
+}
+
+header nav ul li a:hover { /* При наведении на ссылку */
+	background-color: #555; 
+}
+
+ul { /* Стили для всех ненумерованных списков */
+	list-style-position: inside;
+	padding-left: 0px; 
+}
+
+ol { /* Стили для всех нумерованных списков */
+	list-style-position: inside; 
+	padding-left: 0px; 
+}
+
+.container { /* Стили для контейнера */
+	flex: 1;
+    display: flex;
+    justify-content: center; 
+}
+/* Стили для содержимого */
+.content {
+    width: 65%; 
+}
+/* Стили для контейнера новостей */
+.news-container {
+    display: flex;
+    flex-direction: column; /* Выстраиваем элементы в столбец */
+    gap: 20px; /* Задаем промежуток между элементами */
+}
+/* Стили для каждой карточки новости */
+.news-card {
+    background-color: #fff; 
+    border: 1px solid #ddd; 
+    padding: 15px; 
+    border-radius: 5px; 
+    box-shadow: 0 2px 4px rgba(0.1, 0.1, 0.1, 0.1); 
+}
+
+.news-card:hover { /* При наведении */
+    box-shadow: 0 15px 20px rgba(0, 0, 0, 0.1);
+}
+
+.news-card .full-news { /* Стили для полной новости */
+    display: none; /* Скрываем полную новость */
+    font-size: 0.9em; 
+    margin-top: 10px; 
+}
+
+.news-card button { /* Стили для кнопки скрыть/показать новость */
+    margin-top: 10px;
+    padding: 5px 10px;
+    background-color: #007bff; 
+    color: #fff; /* Цвет текста */
+    border: none; /* Убираем границу (у кнопки есть тёмная обводка) */
+    cursor: pointer; 
+}
+
+.news-card button:hover { /* При наведении на кнопку */
+    background-color: #0056b3; 
+}
+
+.contact-info { /* Стили для контактной информации */
+    display: flex;
+    flex-direction: column; 
+    gap: 20px; 
+}
+
+.contact-details, .map { /* Стиль для карты */
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.converter { /* Конвертер валют. Стиль для него */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 350px; 
+	height: 300px; 
+    text-align: center; 
+}
+
+.converter-body { /* Основное содержимое конвертера валют*/
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+
+.converter-body label { /* Подписи над полями ввода*/
+    margin-bottom: 5px;
+    font-weight: bold; 
+}
+
+.converter-body input { /* Поля ввода*/
+    width: 95%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.converter-body button { /* Кнопка смены валюты */
+    width: 40%; 
+    padding: 10px;
+}
+
+.evidence ul{ /* Список для страницы about. Там должны быть галочки, а не точки */
+	list-style-type: '✔'; 
+	color: #35C2D3; 
+}
+
+.content a{ /* Т.к. ссылки внутри контейнера, то повторно прописываем свойства для ссылок - отсутствие подчёркивания, верный цвет + подчёркивание при наведении*/
+	text-decoration: none;
+	color: #35C2D3;
+}
+
+.content a:hover{
+	text-decoration: underline;
+}
